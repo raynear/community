@@ -17,5 +17,5 @@ def login(request):
     providers.append(provider)
     return auth_login(request,
                       authentication_form=LoginForm,
-                      template_name='accounts/login_form.html',
+                      template_name='login_form.html',
                       extra_context={'providers': providers})
