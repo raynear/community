@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.kakao',
     'graphene_django',
     'board'
 ]
@@ -50,6 +52,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
+
+SITE_ID = 1
 
 GRAPHENE = {
     'SCHEMA': 'community.schema.schema'
