@@ -1,4 +1,4 @@
-.db.sqlite3
+db.sqlite3
 community/__pycache__
 board/__pycache__
 board/migrations
