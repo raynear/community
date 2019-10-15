@@ -4,3 +4,4 @@ board/__pycache__
 board/migrations
 account/__pycache__
 account/migrations
+reactapp/node_modules

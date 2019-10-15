@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon } from "antd";
+
+import SocialLogin from "./SocialLogin.js";
 
 const { Header, Sider, Content } = Layout;
 
@@ -11,9 +13,14 @@ const App = () => {
 
   return (
     <Layout>
-      <Sider trigger={null} collapsible collapsed={collapse} style={{ overflow: 'auto', height: '100vh', position: 'fixed' }}>
+      <Sider
+        trigger={null}
+        collapsible
+        collapsed={collapse}
+        style={{ overflow: "auto", height: "100vh", position: "fixed" }}
+      >
         <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1">
             <Icon type="user" />
             <span>nav 1</span>
@@ -29,93 +36,161 @@ const App = () => {
         </Menu>
       </Sider>
       <Layout style={{ marginLeft: folding }}>
-        <Header style={{ background: '#fff', padding: 0 }}>
+        <Header style={{ background: "#fff", padding: 0 }}>
           <Icon
             className="trigger"
-            type={collapse ? 'menu-unfold' : 'menu-fold'}
+            type={collapse ? "menu-unfold" : "menu-fold"}
             onClick={() => setCollapse(!collapse)}
           />
         </Header>
         <Content
           style={{
-            margin: '24px 16px 0',
-            overflow: 'initial',
+            margin: "24px 16px 0",
+            overflow: "initial",
             padding: 24,
-            background: '#fff',
-            minHeight: 280,
+            background: "#fff",
+            minHeight: 280
           }}
         >
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
-          Content<br />
+          <SocialLogin />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
+          Content
+          <br />
         </Content>
       </Layout>
     </Layout>
   );
-}
+};
 
 export default App;

@@ -4,4 +4,5 @@ from django.shortcuts import render
 
 
 def kakao(request, template='login.html'):
+    print(request)
     return render(request, template, {})

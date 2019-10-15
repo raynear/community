@@ -21,8 +21,8 @@ import board.views
 from .schema import schema
 
 urlpatterns = [
-    path(r'admin/', admin.site.urls),
-    path(r'board/', include('board.urls')),
-    path(r'accounts/', include('allauth.urls')),
-    path(r'graphql/', GraphQLView.as_view(graphiql=True, schema=schema))
+    path('oauth/', include('social_django.urls')),
+    path('admin/', admin.site.urls),
+    path('board/', include('board.urls')),
+    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema))
 ]
