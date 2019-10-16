@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'graphene_django',
     'social_django',
+    'corsheaders',
     'board'
 ]
 
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'community.urls'
@@ -137,6 +139,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# CORS
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'https://localhost:3000',
+    'http://localhost:8000'
+)
+
+CSRF_TRUSTED_ORIGINS = ['https://localhost:3000', 'http://localhost:3000']
 
 # social auth
 

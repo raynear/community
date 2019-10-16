@@ -14,7 +14,6 @@ class BoardModel(models.Model):
 class ArticleModel(models.Model):
     board = models.ForeignKey(BoardModel, on_delete=models.CASCADE)
     subject = models.CharField(max_length=50, blank=True)
-#    name = models.ForeignKey(UserModel)
     contents = models.TextField(default="")
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)

@@ -73,15 +73,54 @@ class Query(object):
         return None
 
 
-class ArticleMutation(graphene.Mutation):
+class CreateArticle(graphene.Mutation):
     class Arguments:
-        subject = graphene.String(required=True)
+        subject = graphene.String()
         contents = graphene.String(required=True)
+        boardID = graphene.String()
 
     article = graphene.Field(ArticleModelType)
 
-    def mutate(self, info, subject, contents):
+    def mutate(self, info, subject, contents, boardID):
+        selectedBoard = BoardModel.objects.get(id=boardID)
+        article = ArticleModel.objects.create(
+            subject=subject,
+            contents=contents,
+            board=selectedBoard)
+        article.save()
+        return CreateArticle(article=article)
 
 
-class Mutation(object):
-    all_board = graphene.List(BoardModelType)
+class CreateComment(graphene.Mutation):
+    class Arguments:
+        articleID = graphene.String()
+        contents = graphene.String(required=True)
+
+    comment = graphene.Field(CommentModelType)
+
+    def mutate(self, info, articleID, contents):
+        selectedArticle = ArticleModel.objects.get(id=articleID)
+        comment = CommentModel.objects.create(
+            article=selectedArticle,
+            contents=contents)
+        comment.save()
+        return CreateComment(comment=comment)
+
+
+class UpdateView(graphene.Mutation):
+    class Arguments:
+        articleID = graphene.String()
+
+    article = graphene.Field(ArticleModelType)
+
+    def mutate(self, info, articleID):
+        selectedArticle = ArticleModel.objects.get(id=articleID)
+        selectedArticle.view_cnt += 1
+        selectedArticle.save()
+        return UpdateView(article=selectedArticle)
+
+
+class Mutation(graphene.ObjectType):
+    create_article = CreateArticle.Field()
+    create_comment = CreateComment.Field()
+    update_view = UpdateView.Field()

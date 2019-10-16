@@ -10,8 +10,9 @@ class UserType(DjangoObjectType):
         model = get_user_model()
 
 
-class Mutation(graphene.ObjectType):
+class Mutation(board.schema.Mutation, graphene.ObjectType):
     social_auth = graphql_social_auth.SocialAuthJWT.Field()
+    pass
 
 
 class Query(board.schema.Query, graphene.ObjectType):
