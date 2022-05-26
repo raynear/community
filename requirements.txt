@@ -55,7 +55,7 @@ pycparser==2.19
 pycryptodome==3.8.2
 pydocstyle==3.0.0
 pyflakes==2.0.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pylint==2.2.2
 pylint-django==2.0.11
 pylint-plugin-utils==0.6
