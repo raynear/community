@@ -44,7 +44,7 @@ numpy==1.15.4
 oauthlib==3.1.0
 pandas==0.23.4
 parso==0.3.1
-Pillow==9.0.1
+Pillow==9.3.0
 pipenv==2022.1.8
 pluggy==0.8.0
 promise==2.2.1
